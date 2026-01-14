@@ -18,11 +18,15 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -188,20 +192,8 @@
   .mt-\[200px\] {
     margin-top: 200px;
   }
-  .ml-0 {
-    margin-left: calc(var(--spacing) * 0);
-  }
-  .ml-\[40px\] {
-    margin-left: 40px;
-  }
-  .ml-\[299px\] {
-    margin-left: 299px;
-  }
   .ml-\[400px\] {
     margin-left: 400px;
-  }
-  .block {
-    display: block;
   }
   .flex {
     display: flex;
@@ -212,14 +204,14 @@
   .h-\[494px\] {
     height: 494px;
   }
+  .h-\[676px\] {
+    height: 676px;
+  }
   .w-\[60px\] {
     width: 60px;
   }
   .w-\[374px\] {
     width: 374px;
-  }
-  .w-\[388\] {
-    width: 388;
   }
   .w-\[388px\] {
     width: 388px;
@@ -251,9 +243,6 @@
   .justify-between {
     justify-content: space-between;
   }
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
-  }
   .gap-\[10px\] {
     gap: 10px;
   }
@@ -262,9 +251,6 @@
   }
   .gap-\[30px\] {
     gap: 30px;
-  }
-  .gap-y-0 {
-    row-gap: calc(var(--spacing) * 0);
   }
   .gap-y-\[10px\] {
     row-gap: 10px;
@@ -277,6 +263,12 @@
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
+  .rounded-4xl {
+    border-radius: var(--radius-4xl);
   }
   .rounded-\[10px\] {
     border-radius: 10px;
@@ -292,14 +284,6 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
-  .border-r {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
   .border-solid {
     --tw-border-style: solid;
     border-style: solid;
@@ -313,20 +297,17 @@
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
-  .p-\[20\[x\]\] {
-    padding: 20[x];
+  .bg-blue-950 {
+    background-color: var(--color-blue-950);
   }
-  .p-\[20px\] {
-    padding: 20px;
+  .p-\[50px\] {
+    padding: 50px;
   }
-  .px-0 {
-    padding-inline: calc(var(--spacing) * 0);
+  .p-\[100px\] {
+    padding: 100px;
   }
   .px-\[30px\] {
     padding-inline: 30px;
-  }
-  .px-\[40px\] {
-    padding-inline: 40px;
   }
   .px-\[50px\] {
     padding-inline: 50px;
@@ -334,29 +315,17 @@
   .px-\[60px\] {
     padding-inline: 60px;
   }
-  .px-\[70px\] {
-    padding-inline: 70px;
-  }
-  .py-0 {
-    padding-block: calc(var(--spacing) * 0);
-  }
-  .py-\[0px\] {
-    padding-block: 0px;
-  }
   .py-\[15px\] {
     padding-block: 15px;
   }
   .py-\[30px\] {
     padding-block: 30px;
   }
-  .py-\[50px\] {
-    padding-block: 50px;
-  }
-  .py-\[70px\] {
-    padding-block: 70px;
-  }
   .py-\[100px\] {
     padding-block: 100px;
+  }
+  .py-\[200px\] {
+    padding-block: 200px;
   }
   .text-center {
     text-align: center;
@@ -369,6 +338,14 @@
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
   .text-6xl {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
@@ -378,9 +355,6 @@
   }
   .text-\[48px\] {
     font-size: 48px;
-  }
-  .text-\[48\] {
-    color: 48;
   }
   .text-blue-950 {
     color: var(--color-blue-950);
@@ -399,10 +373,6 @@
   }
   .underline {
     text-decoration-line: underline;
-  }
-  .shadow {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));

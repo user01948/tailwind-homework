@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-blue-950: oklch(28.2% 0.091 267.935);
     --color-gray-500: oklch(55.1% 0.027 264.364);
@@ -21,6 +22,8 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
@@ -182,29 +185,11 @@
   }
 }
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
   .relative {
     position: relative;
   }
-  .z-3 {
-    z-index: 3;
-  }
-  .z-30 {
-    z-index: 30;
-  }
-  .z-\[3\] {
-    z-index: 3;
-  }
-  .z-\[30\] {
-    z-index: 30;
-  }
   .m-auto {
     margin: auto;
-  }
-  .mt-0 {
-    margin-top: calc(var(--spacing) * 0);
   }
   .mt-\[-100px\] {
     margin-top: -100px;
@@ -223,6 +208,9 @@
   }
   .mt-\[200px\] {
     margin-top: 200px;
+  }
+  .mt-\[300px\] {
+    margin-top: 300px;
   }
   .ml-\[400px\] {
     margin-left: 400px;
@@ -245,9 +233,6 @@
   .h-\[680px\] {
     height: 680px;
   }
-  .w-\[44px\] {
-    width: 44px;
-  }
   .w-\[50\%\] {
     width: 50%;
   }
@@ -260,12 +245,6 @@
   .w-\[220px\] {
     width: 220px;
   }
-  .w-\[274px\] {
-    width: 274px;
-  }
-  .w-\[300px\] {
-    width: 300px;
-  }
   .w-\[350px\] {
     width: 350px;
   }
@@ -274,21 +253,6 @@
   }
   .w-\[388px\] {
     width: 388px;
-  }
-  .w-\[400px\] {
-    width: 400px;
-  }
-  .w-\[424px\] {
-    width: 424px;
-  }
-  .w-\[454px\] {
-    width: 454px;
-  }
-  .w-\[474\] {
-    width: 474;
-  }
-  .w-\[474px\] {
-    width: 474px;
   }
   .w-\[520px\] {
     width: 520px;
@@ -302,11 +266,11 @@
   .w-\[720px\] {
     width: 720px;
   }
-  .w-\[px\] {
-    width: px;
-  }
   .max-w-\[480px\] {
     max-width: 480px;
+  }
+  .max-w-\[1200p\] {
+    max-width: 1200p;
   }
   .max-w-\[1200px\] {
     max-width: 1200px;
@@ -335,8 +299,8 @@
   .justify-between {
     justify-content: space-between;
   }
-  .justify-center {
-    justify-content: center;
+  .justify-evenly {
+    justify-content: space-evenly;
   }
   .gap-\[10px\] {
     gap: 10px;
@@ -410,8 +374,13 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .p-\[30px\] {
-    padding: 30px;
+  .to-blue-600 {
+    --tw-gradient-to: var(--color-blue-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-gray-600 {
+    --tw-gradient-to: var(--color-gray-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .p-\[50px\] {
     padding: 50px;
@@ -434,11 +403,20 @@
   .py-\[30px\] {
     padding-block: 30px;
   }
+  .py-\[50px\] {
+    padding-block: 50px;
+  }
+  .py-\[60px\] {
+    padding-block: 60px;
+  }
   .py-\[100px\] {
     padding-block: 100px;
   }
   .py-\[200px\] {
     padding-block: 200px;
+  }
+  .pb-\[100px\] {
+    padding-bottom: 100px;
   }
   .text-center {
     text-align: center;
@@ -451,6 +429,10 @@
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -462,9 +444,6 @@
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-\[10px\] {
-    font-size: 10px;
   }
   .text-\[16px\] {
     font-size: 16px;
@@ -481,15 +460,18 @@
   .text-\[24px\] {
     font-size: 24px;
   }
-  .text-\[30px\] {
-    font-size: 30px;
-  }
   .text-\[48px\] {
     font-size: 48px;
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-blue-500 {
+    color: var(--color-blue-500);
+  }
+  .text-blue-600 {
+    color: var(--color-blue-600);
   }
   .text-blue-700 {
     color: var(--color-blue-700);
@@ -525,6 +507,48 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -604,6 +628,15 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
